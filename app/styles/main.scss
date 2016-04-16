@@ -1,0 +1,229 @@
+$extension-prefix: dyslexia-ext-;
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+
+/**
+ * Useful Mixins to be used below
+ */
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+@charset "UTF-8";
+
+#read-to-me-highlight {
+	text-decoration: underline;
+}
+
+#read-to-me-button {
+	position: fixed;
+	opacity: 0;
+	width: 56px;
+	height: 56px;
+	margin-left: calc(-56px - 8px);
+	margin-top: -28px;
+	background-color: white;
+	border-radius: 50%;
+	background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjIwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDIwIDIwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy4zLjMgKDEyMDcyKSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5pY19tZXNzZW5nZXJfb3V0bGluZV8yNHB4PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+PC9kZWZzPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc2tldGNoOnR5cGU9Ik1TUGFnZSI+CiAgICAgICAgPGcgaWQ9ImljX21lc3Nlbmdlcl9vdXRsaW5lXzI0cHgiIHNrZXRjaDp0eXBlPSJNU0xheWVyR3JvdXAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yLjAwMDAwMCwgLTIuMDAwMDAwKSI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAgTDI0LDAgTDI0LDI0IEwwLDI0IEwwLDAgTDAsMCBaIiBpZD0iU2hhcGUiIHNrZXRjaDp0eXBlPSJNU1NoYXBlR3JvdXAiPjwvcGF0aD4KICAgICAgICAgICAgPHBhdGggZD0iTTIwLDIgTDQsMiBDMi45LDIgMiwyLjkgMiw0IEwyLDIyIEw2LDE4IEwyMCwxOCBDMjEuMSwxOCAyMiwxNy4xIDIyLDE2IEwyMiw0IEMyMiwyLjkgMjEuMSwyIDIwLDIgTDIwLDIgWiBNMjAsMTYgTDYsMTYgTDQsMTggTDQsNCBMMjAsNCBMMjAsMTYgTDIwLDE2IFoiIGlkPSJTaGFwZSIgZmlsbD0iIzAwMDAwMCIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+');
+	background-position: center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	z-index: 10000;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 2px rgba(0, 0, 0, 0.12);
+	transition: opacity 150ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+#read-to-me-button:hover {
+	background-color: #fafafa;
+}
+
+
+
+
+/* Dyslexia Fonts */
+@font-face {
+  font-family: 'Dyslexia-Extension-LexieReadable-Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/LexieReadable-Bold.ttf') format('truetype');
+}
+
+
+/* Dyslexia Fonts */
+@font-face {
+  font-family: 'Dyslexia-Extension-DyslexicView';
+  font-style: normal;
+  font-weight: normal;
+  text-transform: uppercase;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/DyslexicView.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Dyslexia-Extension-LexieReadable-Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/LexieReadable-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Dyslexia-Extension-Nisaba';
+  font-style: normal;
+  font-weight: normal;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/Nisaba.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'Dyslexia-Extension-OpenDyslexic-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/OpenDyslexic-Bold.otf') format("opentype");
+}
+
+@font-face {
+  font-family: 'Dyslexia-Extension-OpenDyslexic-BoldItalic';
+  font-style: normal;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/OpenDyslexic-BoldItalic.otf') format("opentype");
+}
+
+@font-face {
+  font-family: 'Dyslexia-Extension-OpenDyslexic-Italic';
+  font-style: normal;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/OpenDyslexic-Italic.otf') format("opentype");
+}
+
+@font-face {
+  font-family: 'Dyslexia-Extension-OpenDyslexic-Regular';
+  font-style: normal;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/OpenDyslexic-Regular.otf') format("opentype");
+}
+
+@font-face {
+  font-family: 'Dyslexia-Extension-OpenDyslexicAlta-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/OpenDyslexicAlta-Bold.otf') format("opentype");
+}
+
+@font-face {
+  font-family: 'Dyslexia-Extension-OpenDyslexicAlta-BoldItalic';
+  font-style: normal;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/OpenDyslexicAlta-BoldItalic.otf') format("opentype");
+}
+
+@font-face {
+  font-family: 'Dyslexia-Extension-OpenDyslexicAlta-Italic';
+  font-style: normal;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/OpenDyslexicAlta-Italic.otf') format("opentype");
+}
+
+@font-face {
+  font-family: 'Dyslexia-Extension-OpenDyslexicAlta-Regular';
+  font-style: normal;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/OpenDyslexicAlta-Regular.otf')  format("opentype");
+}
+
+@font-face {
+  font-family: 'Dyslexia-Extension-OpenDyslexicMono-Regular';
+  font-style: normal;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/OpenDyslexicMono-Regular.otf') format("opentype");
+}
+
+
+.#{$extension-prefix}gmail-button {
+  cursor: pointer;
+}
+
+
+.#{$extension-prefix}sig-html {
+
+
+};
+
+.autocharlie-material-content-tabs-div {
+  color: black;
+}
+
+.autocharlie-material-content-tabs-div td {
+  
+}
+
+.wysiw-button {
+  text-decoration: none;
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+  color: black;
+  display: inline-block;
+}
+
+#multi-sig-ext-textarea {
+  width: 100%;
+  height: 100px;
+}
+
+/**
+ * Container that holds everything inside of it.
+ */
+.#{$extension-prefix}container {
+
+
+
+  div {
+
+  }
+
+  btn {
+
+  }
+
+  input[text] {
+
+  }
+
+  input[password] {
+
+  }
+
+  a {
+
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+
+  }
+
+}
+
+.#{$extension-prefix} {
+
+  &div {
+    display: block;
+  }
+
+  &btn {
+
+  }
+
+  &input {
+
+  }
+
+  &header {
+
+  }
+}
